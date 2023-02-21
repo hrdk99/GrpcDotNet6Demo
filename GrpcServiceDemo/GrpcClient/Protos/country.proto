@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcClient";
+
+package greet;
+
+service CountryInfo
+{
+	rpc GetCountryCapital (CountryCapitalRequest) returns (CountryCapitalResponse);
+}
+
+message CountryCapitalRequest {
+	string country = 1;
+}
+
+message CountryCapitalResponse {
+	string country = 1;
+	string city = 2;
+}
